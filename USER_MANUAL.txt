@@ -1,0 +1,572 @@
+.\mvnw.cmd javafx:run
+
+================================================================================
+                    KINDERSCAPE ENROLLMENT SYSTEM
+                            USER MANUAL
+================================================================================
+
+Welcome to the Kinderscape Enrollment System! This manual will guide you 
+through using the system step by step. The manual is divided into two main 
+sections: Admin Guide and Teacher Guide.
+
+================================================================================
+                            TABLE OF CONTENTS
+================================================================================
+
+PART 1: ADMIN GUIDE
+  1. Getting Started - Login
+  2. Dashboard Overview
+  3. Student Management
+  4. Strand and Section Management
+  5. Reports
+  6. Settings
+
+PART 2: TEACHER GUIDE
+  1. Getting Started - Login
+  2. Dashboard Overview
+  3. Viewing Your Subjects
+  4. Viewing Your Students
+  5. Account Settings
+
+================================================================================
+                        PART 1: ADMIN GUIDE
+================================================================================
+
+1. GETTING STARTED - LOGIN
+---------------------------
+
+When you first open the system, you will see the login screen.
+
+To log in:
+  - Enter your username in the "Username" field
+  - Enter your password in the "Password" field
+  - Click the "Login" button
+
+Default Admin Account:
+  - Username: admin
+  - Password: admin123
+
+IMPORTANT: Change your password after first login for security!
+
+After successful login, you will be taken to the Admin Dashboard.
+
+
+2. DASHBOARD OVERVIEW
+---------------------
+
+The Dashboard is the main screen you see after logging in. It shows:
+  - Your name and role at the top
+  - A menu on the left side with all available features
+  - The main content area in the center
+
+The Dashboard displays important statistics:
+  - Total number of students
+  - Number of enrolled students
+  - Number of pending students
+  - Number of teachers
+  - Current school year information
+
+You can always return to the Dashboard by clicking the "Dashboard" button in the 
+left menu.
+
+
+3. STUDENT MANAGEMENT
+---------------------
+
+Student Management allows you to add new students, view existing students, and 
+re-enroll students for the new school year.
+
+3.1 ADD STUDENT
+---------------
+
+To add a new student:
+  1. Click "Student Management" in the left menu
+  2. Click "Add Student" from the submenu
+  3. Fill in the student information form:
+
+     Personal Information:
+     - Student ID Number (required)
+     - First Name (required)
+     - Middle Name (optional)
+     - Last Name (required)
+     - Date of Birth (required)
+     - Gender (required)
+     - Address (required)
+     - Contact Number (required)
+     - Email Address (optional)
+     - Guardian Name (required)
+     - Guardian Contact (required)
+
+     Academic Information:
+     - Grade Level (select 11 or 12)
+     - Strand (select from available strands)
+     - Section (select from available sections)
+     - Enrollment Status (select Enrolled or Pending)
+     - School Year & Semester (select from dropdown)
+
+  4. Click "Save" to add the student
+  5. A success message will appear if the student is added successfully
+
+IMPORTANT: Make sure all required fields are filled before saving.
+
+3.2 VIEW STUDENTS
+-----------------
+
+To view all students:
+  1. Click "Student Management" in the left menu
+  2. Click "View Students" from the submenu
+  3. You will see a list of all students with their information
+  4. You can search for students by:
+     - Student ID
+     - Name
+     - Grade Level
+     - Strand
+     - Section
+     - Enrollment Status
+  5. You can edit a student by clicking the "Edit" button next to their name
+  6. You can delete a student by clicking the "Delete" button (be careful!)
+
+3.3 RE-ENROLL STUDENTS
+-----------------------
+
+Re-enrollment is used when moving students to a new school year. This usually 
+happens at the start of a new school year.
+
+To re-enroll students:
+  1. Click "Student Management" in the left menu
+  2. Click "Re-Enroll Students" from the submenu
+  3. Select the previous school year from the dropdown
+  4. You will see a list of students eligible for re-enrollment
+  5. Select the students you want to re-enroll (check the boxes)
+  6. Choose the new grade level (usually Grade 11 becomes Grade 12)
+  7. Select the section for the students
+  8. Click "Re-Enroll Selected" button
+  9. The students will be enrolled in the current school year
+
+NOTE: Grade 11 students automatically become Grade 12 when re-enrolled. Grade 12 
+students who are re-enrolling must provide a reason.
+
+
+4. STRAND AND SECTION MANAGEMENT
+---------------------------------
+
+This section allows you to manage the strands (like ABM, STEM, etc.) and 
+sections (like Grade 11-A, Grade 11-B, etc.) in your school.
+
+4.1 MANAGE STRANDS
+------------------
+
+To add or manage strands:
+  1. Click "Strand and Section" in the left menu
+  2. You will see a list of existing strands
+  3. To add a new strand:
+     - Click "Add Strand" button
+     - Enter the strand name (e.g., "ABM", "STEM", "HUMSS")
+     - Enter a description (optional)
+     - Click "Save"
+  4. To edit a strand:
+     - Click "Edit" next to the strand name
+     - Make your changes
+     - Click "Save"
+  5. To delete a strand:
+     - Click "Delete" next to the strand name
+     - Confirm the deletion
+
+4.2 MANAGE SECTIONS
+-------------------
+
+To add or manage sections:
+  1. Click "Strand and Section" in the left menu
+  2. Go to the "Sections" tab
+  3. You will see a list of existing sections
+  4. To add a new section:
+     - Click "Add Section" button
+     - Enter the section name (e.g., "Grade 11-A")
+     - Select the grade level (11 or 12)
+     - Select the strand
+     - Enter the maximum capacity (how many students can be in this section)
+     - Click "Save"
+  5. To edit a section:
+     - Click "Edit" next to the section name
+     - Make your changes
+     - Click "Save"
+  6. To delete a section:
+     - Click "Delete" next to the section name
+     - Confirm the deletion
+
+IMPORTANT: You cannot delete a section if it has students assigned to it.
+
+
+5. REPORTS
+----------
+
+Reports help you see information about students, teachers, and enrollment in 
+different ways.
+
+5.1 STUDENT LIST BY SECTION
+----------------------------
+
+This report shows all students organized by their sections.
+
+To view:
+  1. Click "Reports" in the left menu
+  2. Click "Student List by Section" from the submenu
+  3. Select a section from the dropdown
+  4. You will see all students in that section
+  5. You can export this list to a file if needed
+
+5.2 TEACHER ASSIGNMENT REPORT
+-----------------------------
+
+This report shows which teachers are assigned to which subjects and sections.
+
+To view:
+  1. Click "Reports" in the left menu
+  2. Click "Teacher Assignment Report" from the submenu
+  3. You will see a list of all teachers with their assigned subjects and 
+     sections
+  4. You can export this report to a file
+
+5.3 ENROLLMENT SUMMARY
+----------------------
+
+This report shows statistics about student enrollment.
+
+To view:
+  1. Click "Reports" in the left menu
+  2. Click "Enrollment Summary" from the submenu
+  3. You will see:
+     - Total number of students
+     - Number of students by grade level
+     - Number of students by strand
+     - Number of students by enrollment status
+     - Number of students by section
+
+5.4 STUDENT LOGS
+----------------
+
+This shows the history of all student records, including archived or deleted 
+students.
+
+To view:
+  1. Click "Reports" in the left menu
+  2. Click "STUDENT LOGS" from the submenu
+  3. You will see all student records with their status
+  4. You can restore archived students if needed
+
+
+6. SETTINGS
+-----------
+
+Settings allow you to manage your account, teacher accounts, and school year 
+information.
+
+6.1 PROFILE
+-----------
+
+To view or edit your profile:
+  1. Click "SETTINGS" in the left menu
+  2. Click "User Accounts" from the submenu
+  3. Click "Profile" from the submenu
+  4. You will see your profile information:
+     - Username
+     - Full Name
+     - Email
+     - Role
+  5. You can update your information and click "Save"
+  6. You can change your password:
+     - Enter your current password
+     - Enter your new password
+     - Confirm your new password
+     - Click "Change Password"
+
+6.2 TEACHER ACCOUNT MANAGEMENT
+--------------------------------
+
+This allows you to create, edit, and manage teacher accounts.
+
+To manage teacher accounts:
+  1. Click "SETTINGS" in the left menu
+  2. Click "User Accounts" from the submenu
+  3. Click "Teacher Accounts" from the submenu
+  4. You will see a list of all teachers
+
+To add a new teacher:
+  1. Click "Add Teacher" button
+  2. Fill in the form:
+     - Username (required, must be unique)
+     - Password (required)
+     - Full Name (required)
+     - Email (optional)
+     - Active Status (check if teacher should be able to login)
+  3. Click "Save"
+
+To edit a teacher:
+  1. Click "Edit" next to the teacher's name
+  2. Make your changes
+  3. Click "Save"
+
+To assign subjects and sections to a teacher:
+  1. Click "Assign Subjects/Sections" next to the teacher's name
+  2. Select the subjects you want to assign (maximum 8 subjects per teacher)
+  3. Select the sections for each subject
+  4. Click "Save Assignment"
+
+To activate or deactivate a teacher:
+  1. Click "Activate" or "Deactivate" next to the teacher's name
+  2. Deactivated teachers cannot log in to the system
+
+6.3 SCHOOL YEAR MANAGEMENT
+--------------------------
+
+This allows you to manage school years and transition to a new school year.
+
+To view school years:
+  1. Click "SETTINGS" in the left menu
+  2. Click "School Year Management" from the submenu
+  3. You will see a list of all school years
+
+To add a new school year:
+  1. Click "Add School Year" button
+  2. Enter the school year (e.g., "2025-2026")
+  3. Enter the start date
+  4. Enter the end date
+  5. Click "Save"
+  6. The system will automatically create semesters for this school year
+
+To set a school year as current:
+  1. Find the school year you want to make current
+  2. Click "Set as Current" button
+  3. Confirm the action
+
+To transition to a new school year:
+  1. Click "Transition to New Year" button
+  2. Select the new school year from the dropdown
+  3. Choose which students to carry over:
+     - Check "Enrolled Students" to carry over enrolled students
+     - Check "Pending Students" to carry over pending students
+  4. Review the preview showing how many students will be carried over
+  5. Click "Confirm Transition"
+  6. The system will:
+     - Make the new school year current
+     - Copy students to the new school year
+     - Increase grade levels (Grade 11 becomes Grade 12)
+     - Set enrollment status to "Pending" (students need to be re-enrolled)
+
+IMPORTANT: Transitioning to a new school year is a major operation. Make sure 
+you have backed up your data and understand what will happen.
+
+
+7. LOGOUT
+---------
+
+To log out of the system:
+  1. Click the "Logout" button at the bottom of the left menu
+  2. You will be returned to the login screen
+
+
+================================================================================
+                        PART 2: TEACHER GUIDE
+================================================================================
+
+1. GETTING STARTED - LOGIN
+---------------------------
+
+When you first open the system, you will see the login screen.
+
+To log in:
+  - Enter your username in the "Username" field
+  - Enter your password in the "Password" field
+  - Click the "Login" button
+
+Your username and password are provided by the administrator. If you don't 
+have an account, contact the administrator.
+
+After successful login, you will be taken to the Teacher Dashboard.
+
+
+2. DASHBOARD OVERVIEW
+---------------------
+
+The Dashboard is the main screen you see after logging in. It shows:
+  - Your name and role at the top
+  - Current date and time
+  - Your profile picture (or initials if no picture)
+  - A menu on the left side with all available features
+  - The main content area in the center
+
+The Dashboard displays:
+  - Summary of your assigned subjects
+  - Number of students in your classes
+  - Quick access to your subjects and students
+
+You can always return to the Dashboard by clicking the "Dashboard" button in 
+the left menu.
+
+
+3. VIEWING YOUR SUBJECTS
+-------------------------
+
+This section shows all the subjects that have been assigned to you.
+
+To view your subjects:
+  1. Click "Subjects" in the left menu
+  2. You will see a list of all your assigned subjects
+  3. For each subject, you can see:
+     - Subject name
+     - Grade level
+     - Sections assigned to you
+     - Number of students in each section
+
+You can click on a subject to see more details about the sections and students 
+in that subject.
+
+
+4. VIEWING YOUR STUDENTS
+------------------------
+
+This section shows all the students in your classes, organized by section.
+
+To view your students:
+  1. Click "Sections and Students" in the left menu
+  2. You will see a list of all sections you are assigned to
+  3. Click on a section to see all students in that section
+  4. For each student, you can see:
+     - Student ID
+     - Full Name
+     - Grade Level
+     - Strand
+     - Contact Information
+
+You can search for specific students using the search box at the top.
+
+You can export the student list to a file if needed for your records.
+
+
+5. ACCOUNT SETTINGS
+-------------------
+
+This allows you to view and update your account information.
+
+To access account settings:
+  1. Click "Account Settings" in the left menu
+  2. You will see your account information:
+     - Username
+     - Full Name
+     - Email Address
+     - Role
+
+To update your information:
+  1. Make changes to the fields you want to update
+  2. Click "Save" button
+  3. A success message will appear
+
+To change your password:
+  1. Enter your current password
+  2. Enter your new password
+  3. Confirm your new password
+  4. Click "Change Password" button
+  5. A success message will appear
+
+IMPORTANT: Remember your new password! If you forget it, contact the 
+administrator to reset it.
+
+To update your profile picture:
+  1. Click "Choose File" or "Browse" button
+  2. Select an image file from your computer
+  3. Click "Upload" button
+  4. Your profile picture will be updated
+
+NOTE: The profile picture should be a square image (same width and height) for 
+best results. Supported formats: JPG, PNG, GIF.
+
+
+6. LOGOUT
+---------
+
+To log out of the system:
+  1. Click the "Logout" button at the bottom of the left menu
+  2. You will be returned to the login screen
+
+
+================================================================================
+                            TROUBLESHOOTING
+================================================================================
+
+COMMON ISSUES AND SOLUTIONS:
+
+1. Cannot log in
+   - Check that your username and password are correct
+   - Make sure Caps Lock is not on
+   - Contact administrator if your account is deactivated
+
+2. Cannot see students or subjects
+   - Make sure you have been assigned subjects and sections by the administrator
+   - Contact administrator if you need assignments
+
+3. Cannot save changes
+   - Make sure all required fields are filled
+   - Check for error messages on the screen
+   - Make sure you have permission to make the change
+
+4. System is slow
+   - Close other programs to free up computer resources
+   - Check your internet connection
+   - Contact IT support if problem persists
+
+5. Forgot password
+   - Contact the administrator to reset your password
+   - Do not share your password with anyone
+
+6. Need help
+   - Contact the system administrator
+   - Check this manual for step-by-step instructions
+
+
+================================================================================
+                            IMPORTANT NOTES
+================================================================================
+
+SECURITY:
+  - Never share your username and password with anyone
+  - Always log out when you are done using the system
+  - Change your password regularly
+  - Use a strong password (mix of letters, numbers, and symbols)
+
+DATA ENTRY:
+  - Always double-check information before saving
+  - Required fields are marked with an asterisk (*)
+  - Save your work frequently
+
+BACKUP:
+  - The system automatically saves your data
+  - However, it is good practice to export important reports regularly
+
+UPDATES:
+  - The system may be updated from time to time
+  - New features may be added
+  - Check with administrator for new features
+
+
+================================================================================
+                            CONTACT INFORMATION
+================================================================================
+
+For technical support or questions about using the system, please contact:
+  - System Administrator
+  - IT Support Team
+
+For questions about student enrollment or academic matters, please contact:
+  - Registrar's Office
+  - School Administration
+
+
+================================================================================
+                            END OF MANUAL
+================================================================================
+
+Thank you for using the Kinderscape Enrollment System!
+
+Version: 1.0
+Last Updated: 2025
+

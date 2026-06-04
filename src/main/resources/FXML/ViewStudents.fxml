@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.ViewStudentsController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Label text="View Students" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" 
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 13px; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+            </HBox>
+            
+            <!-- Search and Filter -->
+            <VBox spacing="10">
+                <!-- Search Row -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Search:" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="searchField" promptText="Search by name, LRN, or contact..." 
+                               style="-fx-pref-width: 200; -fx-pref-height: 30;" onKeyReleased="#handleSearch"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                </HBox>
+                
+                <!-- Filter Row 1 -->
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Grade:" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="gradeFilterComboBox" promptText="All" 
+                              style="-fx-pref-width: 80; -fx-pref-height: 30;" onAction="#handleFilter"/>
+                    <Label text="Strand:" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="strandFilterComboBox" promptText="All" 
+                              style="-fx-pref-width: 100; -fx-pref-height: 30;" onAction="#handleFilter"/>
+                    <Label text="Status:" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="enrollmentStatusFilterComboBox" promptText="All" 
+                              style="-fx-pref-width: 100; -fx-pref-height: 30;" onAction="#handleFilter"/>
+                    <Label text="Section:" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="sectionFilterComboBox" promptText="All" 
+                              style="-fx-pref-width: 120; -fx-pref-height: 30;" onAction="#handleFilter"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="Semester:" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="semesterFilterComboBox" promptText="All" 
+                              style="-fx-pref-width: 180; -fx-pref-height: 30;" onAction="#handleFilter"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Students Table -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <Label fx:id="studentCountLabel" text="Total Students: 0" 
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                
+                <TableView fx:id="studentsTable" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <Label fx:id="emptyLabel" text="No students found." 
+                               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-padding: 20;" 
+                               alignment="CENTER"/>
+                    </placeholder>
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" prefWidth="0" minWidth="0" maxWidth="0" visible="false"/>
+                        <TableColumn fx:id="rowNumberColumn" text="#" prefWidth="50" resizable="false"/>
+                        <TableColumn fx:id="nameColumn" text="Name" prefWidth="200"/>
+                        <TableColumn fx:id="ageColumn" text="Age" prefWidth="60" resizable="false"/>
+                        <TableColumn fx:id="sexColumn" text="Sex" prefWidth="70" resizable="false"/>
+                        <TableColumn fx:id="gradeLevelColumn" text="Grade" prefWidth="70" resizable="false"/>
+                        <TableColumn fx:id="strandColumn" text="Strand" prefWidth="100"/>
+                        <TableColumn fx:id="sectionColumn" text="Section" prefWidth="120"/>
+                        <TableColumn fx:id="semesterColumn" text="School Year &amp; Semester" prefWidth="200"/>
+                        <TableColumn fx:id="lrnColumn" text="LRN" prefWidth="120"/>
+                        <TableColumn fx:id="contactColumn" text="Contact" prefWidth="120"/>
+                        <TableColumn fx:id="parentGuardianColumn" text="Parent/Guardian" prefWidth="180"/>
+                        <TableColumn fx:id="enrollmentStatusColumn" text="Status" prefWidth="100"/>
+                        <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="240" resizable="false"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+    
+</BorderPane>
+

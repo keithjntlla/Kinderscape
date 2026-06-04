@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.TeacherAccountManagementController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Label text="Teacher Account Management" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="addTeacherButton" text="➕ Add Teacher" onAction="#handleAddTeacher" 
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 13px; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+                <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" 
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 13px; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+            </HBox>
+            
+            <!-- Search -->
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Search:" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="searchField" promptText="Search by username or name..." 
+                               style="-fx-pref-width: 300; -fx-pref-height: 30;" onKeyReleased="#handleSearch"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Teachers Table -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <Label fx:id="teacherCountLabel" text="Total Teachers: 0" 
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                
+                <TableView fx:id="teachersTable" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <Label text="No teachers found." 
+                               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-padding: 20;" 
+                               alignment="CENTER"/>
+                    </placeholder>
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" prefWidth="0" minWidth="0" maxWidth="0" visible="false"/>
+                        <TableColumn fx:id="rowNumberColumn" text="#" prefWidth="50" resizable="false"/>
+                        <TableColumn fx:id="usernameColumn" text="Username" prefWidth="150"/>
+                        <TableColumn fx:id="fullNameColumn" text="Full Name" prefWidth="250"/>
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                        <TableColumn fx:id="lastLoginColumn" text="Last Login" prefWidth="150"/>
+                        <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="240" resizable="false"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+    
+</BorderPane>
+

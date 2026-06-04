@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.ArchiveStudentsController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Label text=" PAST STUDENT LOGS" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" 
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 13px; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+            </HBox>
+            
+            <!-- Search and Filter -->
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="Search:" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="searchField" promptText="Search by name, LRN, or contact..." 
+                           style="-fx-pref-width: 300; -fx-pref-height: 30;" onKeyReleased="#handleSearch"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Filter by Reason:" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="reasonFilterComboBox" promptText="All Reasons" 
+                          style="-fx-pref-width: 200; -fx-pref-height: 30;" onAction="#handleFilter"/>
+            </HBox>
+            
+            <!-- Students Table -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <Label fx:id="studentCountLabel" text="Total Archived Students: 0" 
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                
+                <TableView fx:id="studentsTable" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <Label fx:id="emptyLabel" text="No archived students found." 
+                               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-padding: 20;" 
+                               alignment="CENTER"/>
+                    </placeholder>
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" prefWidth="0" minWidth="0" maxWidth="0" visible="false"/>
+                        <TableColumn fx:id="rowNumberColumn" text="#" prefWidth="50" resizable="false"/>
+                        <TableColumn fx:id="nameColumn" text="Name" prefWidth="200"/>
+                        <TableColumn fx:id="ageColumn" text="Age" prefWidth="60" resizable="false"/>
+                        <TableColumn fx:id="sexColumn" text="Sex" prefWidth="70" resizable="false"/>
+                        <TableColumn fx:id="gradeLevelColumn" text="Grade" prefWidth="70" resizable="false"/>
+                        <TableColumn fx:id="strandColumn" text="Strand" prefWidth="100"/>
+                        <TableColumn fx:id="archiveReasonColumn" text="Archive Reason" prefWidth="200"/>
+                        <TableColumn fx:id="archivedAtColumn" text="Archived Date" prefWidth="150"/>
+                        <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="120" resizable="false"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+    
+</BorderPane>
+

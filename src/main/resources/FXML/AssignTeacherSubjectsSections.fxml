@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.AssignTeacherSubjectsSectionsController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <top>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label fx:id="teacherNameLabel" text="Teacher: " 
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Separator/>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.5" style="-fx-padding: 15 20 10 20;">
+            <!-- Left Side: Current Assignments Display -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <Label text="Current Assignments" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <TableView fx:id="assignmentsTable" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="subjectColumn" text="Subject" prefWidth="200"/>
+                        <TableColumn fx:id="sectionColumn" text="Section" prefWidth="150"/>
+                        <TableColumn fx:id="strandColumn" text="Strand" prefWidth="100"/>
+                        <TableColumn fx:id="gradeColumn" text="Grade" prefWidth="80"/>
+                        <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="100"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label fx:id="assignmentsCountLabel" text="Total Assignments: 0" 
+                           style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="clearAllButton" text="Clear All" 
+                            style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 11px; -fx-background-radius: 5; -fx-padding: 5 15; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Right Side: Add New Assignment Form -->
+            <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <Label text="Add New Assignment" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                
+                <GridPane hgap="15" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="100" prefWidth="100"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                    </columnConstraints>
+                    
+                    <!-- Subject Dropdown -->
+                    <Label text="Subject:" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                           style="-fx-font-weight: bold;"/>
+                    <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <ComboBox fx:id="subjectComboBox" HBox.hgrow="ALWAYS" 
+                                  style="-fx-pref-height: 30;"
+                                  promptText="Select a subject"/>
+                        <Button fx:id="addSubjectButton" text="➕ Add" 
+                                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 11px; -fx-background-radius: 5; -fx-padding: 5 12; -fx-cursor: hand;"/>
+                        <Button fx:id="editSubjectButton" text="✏️ Edit" 
+                                style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-size: 11px; -fx-background-radius: 5; -fx-padding: 5 12; -fx-cursor: hand;"/>
+                        <Button fx:id="deleteSubjectButton" text="🗑️ Delete" 
+                                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 11px; -fx-background-radius: 5; -fx-padding: 5 12; -fx-cursor: hand;"/>
+                    </HBox>
+                    
+                    <!-- Section Dropdown -->
+                    <Label text="Section:" GridPane.columnIndex="0" GridPane.rowIndex="1" 
+                           style="-fx-font-weight: bold;"/>
+                    <ComboBox fx:id="sectionComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" 
+                              style="-fx-pref-height: 30;"
+                              promptText="Select a section"/>
+                    
+                    <!-- Strand Dropdown -->
+                    <Label text="Strand:" GridPane.columnIndex="0" GridPane.rowIndex="2" 
+                           style="-fx-font-weight: bold;"/>
+                    <ComboBox fx:id="strandComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2" 
+                              style="-fx-pref-height: 30;"
+                              promptText="Select a strand"/>
+                    
+                    <!-- Grade Level Dropdown -->
+                    <Label text="Grade:" GridPane.columnIndex="0" GridPane.rowIndex="3" 
+                           style="-fx-font-weight: bold;"/>
+                    <ComboBox fx:id="gradeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="3" 
+                              style="-fx-pref-height: 30;"
+                              promptText="Select grade level (11 or 12)"/>
+                </GridPane>
+                
+                <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+                    <Button fx:id="assignButton" text="Assign" 
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 13px; -fx-background-radius: 5; -fx-padding: 8 25; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+        </SplitPane>
+    </center>
+    
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 20 15 20;">
+            <Button fx:id="cancelButton" text="Close" 
+                    style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 13px; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

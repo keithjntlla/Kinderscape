@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.TeacherAssignmentReportController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <top>
+        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15;">
+            <Label text="👨‍🏫 Teacher Assignment Report" 
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label fx:id="summaryLabel" text="" 
+                   style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.35" style="-fx-background-color: #ecf0f1;">
+            <!-- Left Panel: Teachers List -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Teachers List" 
+                           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"
+                           HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="exportAllTeachersPdfButton" text="📄 Export Teachers List" 
+                            onAction="#exportAllTeachersToPDF"
+                            style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 12px; -fx-padding: 8 15; -fx-background-radius: 5; -fx-cursor: hand;"/>
+                </HBox>
+                
+                <ListView fx:id="teachersListView" 
+                          style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 3;"
+                          VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <Label text="Loading teachers..." 
+                               style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d; -fx-padding: 10;" 
+                               alignment="CENTER"/>
+                    </placeholder>
+                </ListView>
+            </VBox>
+            
+            <!-- Right Panel: Teacher Assignments Table -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Assigned Subjects &amp; Sections" 
+                           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"
+                           HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="selectedTeacherLabel" text="No teacher selected" 
+                           style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    <Button fx:id="exportSelectedTeacherPdfButton" text="📄 Export Selected Teacher" 
+                            onAction="#exportSelectedTeacherWithSubjectsToPDF"
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 12px; -fx-padding: 8 15; -fx-background-radius: 5; -fx-cursor: hand;"/>
+                </HBox>
+                
+                <Label fx:id="previewLabel" text="Select a teacher from the list to view details" 
+                       style="-fx-font-size: 11px; -fx-text-fill: #95a5a6;"/>
+                
+                <TableView fx:id="subjectsTable" style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 3;" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="subjectNameColumn" text="Subject" prefWidth="200" />
+                        <TableColumn fx:id="sectionColumn" text="Section" prefWidth="150" />
+                        <TableColumn fx:id="strandColumn" text="Strand" prefWidth="100" />
+                        <TableColumn fx:id="gradeColumn" text="Grade" prefWidth="80" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </SplitPane>
+    </center>
+    
+</BorderPane>

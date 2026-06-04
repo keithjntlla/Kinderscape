@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.LoginController"
+            prefHeight="700.0" prefWidth="1300.0">
+    
+    <!-- Left Panel - Dashboard Color Scheme -->
+    <VBox alignment="CENTER" spacing="25" 
+          style="-fx-background-color: linear-gradient(to bottom, #1a252f, #2c3e50, #34495e);"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" 
+          AnchorPane.leftAnchor="0" prefWidth="600">
+        
+        <!-- Large Icon Section -->
+        <VBox alignment="CENTER" spacing="20">
+            <Label text="🎓" style="-fx-font-size: 140px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 20, 0, 0, 5);"/>
+        </VBox>
+        
+        <!-- School Information -->
+        <VBox alignment="CENTER" spacing="12">
+            <Label text="KINDERSCAPE" style="-fx-text-fill: white; -fx-font-size: 48px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 2, 2);"/>
+            <Label text="Senior High School" style="-fx-text-fill: #ecf0f1; -fx-font-size: 19px; -fx-font-weight: 500;"/>
+            <Label text="Enrollment Management System" style="-fx-text-fill: #bdc3c7; -fx-font-size: 16px; -fx-font-style: italic;"/>
+        </VBox>
+        
+        <Region VBox.vgrow="ALWAYS"/>
+        
+        <!-- Creative Tagline -->
+        <VBox alignment="CENTER" spacing="8">
+            <Label text="✨ Transforming Futures, One Enrollment at a Time ✨" 
+                   style="-fx-text-fill: #ecf0f1; -fx-font-size: 14px; -fx-font-style: italic; -fx-text-alignment: center;"/>
+            <Label text="Where Excellence Meets Innovation" 
+                   style="-fx-text-fill: #95a5a6; -fx-font-size: 12px; -fx-text-alignment: center;"/>
+        </VBox>
+    </VBox>
+    
+    <!-- Right Panel - Login Form -->
+    <VBox alignment="CENTER" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" 
+          AnchorPane.leftAnchor="600" AnchorPane.rightAnchor="0"
+          style="-fx-background-color: #ecf0f1;">
+        
+        <VBox alignment="CENTER" spacing="30" maxWidth="550" style="-fx-padding: 50;">
+            
+            <!-- Card Container -->
+            <VBox alignment="CENTER" spacing="28" 
+                  style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 50; -fx-effect: dropshadow(gaussian, rgba(44,62,80,0.2), 20, 0, 0, 8);">
+                
+                <!-- Header with Creative Text -->
+                <VBox alignment="CENTER" spacing="12">
+                    <Label text="🌟 WELCOME! 🌟" 
+                           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center;"/>
+                    <Label text="LOGIN PAGE" 
+                           style="-fx-font-size: 15px; -fx-text-fill: #7f8c8d; -fx-text-alignment: center;"/>
+                </VBox>
+                
+                <!-- Error Label -->
+                <Label fx:id="errorLabel" text="Error message" 
+                       style="-fx-text-fill: #e74c3c; -fx-font-size: 12px; -fx-padding: 10; -fx-background-color: #ffe6e6; -fx-background-radius: 8; -fx-border-color: #e74c3c; -fx-border-radius: 8; -fx-border-width: 1;"
+                       visible="false" wrapText="true" maxWidth="450"/>
+                
+                <!-- Username Field -->
+                <VBox spacing="10">
+                    <Label text="👤 Username" style="-fx-font-size: 14px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+                    <TextField fx:id="usernameField" promptText="Enter your username"
+                               style="-fx-background-radius: 10; -fx-padding: 14; -fx-font-size: 14px; -fx-border-color: #dfe6e9; -fx-border-radius: 10; -fx-border-width: 1.5; -fx-background-color: #fafafa;"
+                               prefWidth="450"/>
+                </VBox>
+                
+                <!-- Password Field -->
+                <VBox spacing="10">
+                    <Label text="🔐 Password" style="-fx-font-size: 14px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+                    <HBox spacing="0" alignment="CENTER_LEFT" prefWidth="450">
+                        <PasswordField fx:id="passwordField" promptText="Enter your password"
+                                       HBox.hgrow="ALWAYS"
+                                       style="-fx-background-radius: 10 0 0 10; -fx-padding: 14; -fx-font-size: 14px; -fx-border-color: #dfe6e9; -fx-border-radius: 10 0 0 10; -fx-border-width: 1.5; -fx-background-color: #fafafa;"/>
+                        <TextField fx:id="passwordVisibleField" promptText="Enter your password"
+                                    HBox.hgrow="ALWAYS"
+                                    visible="false" managed="false"
+                                    style="-fx-background-radius: 10 0 0 10; -fx-padding: 14; -fx-font-size: 14px; -fx-border-color: #dfe6e9; -fx-border-radius: 10 0 0 10; -fx-border-width: 1.5; -fx-background-color: #fafafa;"/>
+                        <Button fx:id="btnTogglePassword" text="🔍" onAction="#togglePasswordVisibility"
+                                style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-background-radius: 0 10 10 0; -fx-border-color: #dfe6e9; -fx-border-width: 1.5 1.5 1.5 0; -fx-border-radius: 0 10 10 0; -fx-cursor: hand; -fx-padding: 14 18; -fx-font-size: 18px; -fx-effect: dropshadow(gaussian, rgba(52,73,94,0.3), 5, 0, 2, 2);"
+                                prefWidth="50"/>
+                    </HBox>
+                </VBox>
+                
+                <!-- Login Button with Loading -->
+                <StackPane>
+                    <Button fx:id="loginButton" text="🚀 Access Your Dashboard" onAction="#handleLogin"
+                            style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand; -fx-padding: 16; -fx-effect: dropshadow(gaussian, rgba(52,73,94,0.4), 8, 0, 3, 3);"
+                            prefWidth="450"/>
+                    <ProgressIndicator fx:id="loadingIndicator" maxWidth="25" maxHeight="25" visible="false"/>
+                </StackPane>
+                
+                <!-- Forgot Password -->
+                <Hyperlink text="🔑 Forgot your password?" onAction="#handleForgotPassword"
+                           style="-fx-text-fill: #34495e; -fx-font-size: 12px; -fx-underline: false; -fx-border-color: transparent; -fx-cursor: hand;"/>
+                
+            </VBox>
+            
+            <!-- Footer -->
+            <Label text="© 2024 Kinderscape" 
+                   style="-fx-text-fill: #95a5a6; -fx-font-size: 11px;"/>
+            
+        </VBox>
+        
+    </VBox>
+    
+</AnchorPane>

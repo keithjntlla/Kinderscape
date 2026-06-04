@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.StudentListBySectionController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <top>
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20;">
+            <Label text="📋 Student List by Section" 
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="Select Section:" style="-fx-font-size: 14px; -fx-text-fill: #34495e;"/>
+                <ComboBox fx:id="sectionComboBox" prefWidth="400" />
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="exportPdfButton" text="📄 Export PDF (Basic Student Data)" 
+                        onAction="#exportToPDF"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 10 20; -fx-background-radius: 5; -fx-cursor: hand;"/>
+                <Button fx:id="exportExcelButton" text="📊 Export Excel (Complete Student Data)" 
+                        onAction="#exportToExcel"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 10 20; -fx-background-radius: 5; -fx-cursor: hand;"/>
+            </HBox>
+            
+            <Label fx:id="sectionInfoLabel" text="" 
+                   style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <TableView fx:id="studentsTable" style="-fx-background-color: white;">
+                <columns>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="150" />
+                    <TableColumn fx:id="birthdateColumn" text="Birthdate" prefWidth="100" />
+                    <TableColumn fx:id="ageColumn" text="Age" prefWidth="50" />
+                    <TableColumn fx:id="sexColumn" text="Sex" prefWidth="60" />
+                    <TableColumn fx:id="addressColumn" text="Address" prefWidth="200" />
+                    <TableColumn fx:id="contactNumberColumn" text="Contact Number" prefWidth="120" />
+                    <TableColumn fx:id="parentGuardianNameColumn" text="Parent/Guardian Name" prefWidth="150" />
+                    <TableColumn fx:id="parentGuardianContactColumn" text="Parent/Guardian Contact" prefWidth="120" />
+                    <TableColumn fx:id="parentGuardianRelationshipColumn" text="Relationship" prefWidth="100" />
+                    <TableColumn fx:id="gradeLevelColumn" text="Grade Level" prefWidth="80" />
+                    <TableColumn fx:id="strandColumn" text="Strand" prefWidth="120" />
+                    <TableColumn fx:id="lrnColumn" text="LRN" prefWidth="100" />
+                    <TableColumn fx:id="previousSchoolColumn" text="Previous School" prefWidth="200" />
+                    <TableColumn fx:id="gwaColumn" text="GWA" prefWidth="60" />
+                    <TableColumn fx:id="enrollmentStatusColumn" text="Status" prefWidth="100" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    
+</BorderPane>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.EnrollmentSummaryController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <top>
+        <VBox spacing="12" style="-fx-background-color: white; -fx-padding: 15 20;">
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="📊 Enrollment Summary / Statistics" 
+                       style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="exportPdfButton" text="📄 Export PDF" 
+                        onAction="#exportToPDF"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 8 16; -fx-background-radius: 6; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);"/>
+                <Button fx:id="exportExcelButton" text="📊 Export Excel" 
+                        onAction="#exportToExcel"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 8 16; -fx-background-radius: 6; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" style="-fx-background-color: #ecf0f1; -fx-border-color: transparent;">
+            <VBox fx:id="mainContainer" spacing="15" style="-fx-padding: 15;">
+                <!-- Content will be dynamically generated -->
+            </VBox>
+        </ScrollPane>
+    </center>
+    
+</BorderPane>
+

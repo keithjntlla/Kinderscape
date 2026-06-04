@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.EditStudentController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;" alignment="TOP_CENTER">
+            <!-- Header -->
+            <Label text="Edit Student Information" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <!-- Form Container -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" maxWidth="1400">
+                
+                <!-- Personal Information Section -->
+                <Label text="Personal Information" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                
+                <GridPane hgap="12" vgap="8">
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                    </columnConstraints>
+                    
+                    <!-- Row 1: Name, Birthdate, Age, Sex -->
+                    <Label text="Name *" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <TextField fx:id="nameField" GridPane.columnIndex="0" GridPane.rowIndex="1" prefHeight="30"/>
+                    
+                    <Label text="Birthdate" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <DatePicker fx:id="birthdatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="30"/>
+                    
+                    <Label text="Age" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <TextField fx:id="ageField" GridPane.columnIndex="2" GridPane.rowIndex="1" prefHeight="30"/>
+                    
+                    <Label text="Sex *" GridPane.columnIndex="3" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="sexComboBox" GridPane.columnIndex="3" GridPane.rowIndex="1" prefHeight="30"/>
+                    
+                    <Label text="Contact Number" GridPane.columnIndex="4" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <TextField fx:id="contactNumberField" GridPane.columnIndex="4" GridPane.rowIndex="1" prefHeight="30"/>
+                    
+                    <!-- Row 2: Address -->
+                    <Label text="Address" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <TextField fx:id="addressField" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="3" prefHeight="30"/>
+                </GridPane>
+                
+                <!-- Parent/Guardian Information Section -->
+                <Separator style="-fx-padding: 5 0;"/>
+                <Label text="Parent/Guardian Information" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                
+                <GridPane hgap="12" vgap="8">
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="220" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="220" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="220" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="220" hgrow="ALWAYS"/>
+                    </columnConstraints>
+                    
+                    <Label text="Parent/Guardian Name" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <TextField fx:id="parentGuardianNameField" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" prefHeight="30"/>
+                    
+                    <Label text="Contact Number" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <TextField fx:id="parentGuardianContactField" GridPane.columnIndex="2" GridPane.rowIndex="1" prefHeight="30"/>
+                    
+                    <Label text="Relationship" GridPane.columnIndex="3" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="parentGuardianRelationshipComboBox" GridPane.columnIndex="3" GridPane.rowIndex="1" prefHeight="30"/>
+                </GridPane>
+                
+                <!-- Academic Information Section -->
+                <Separator style="-fx-padding: 5 0;"/>
+                <Label text="Academic Information" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                
+                <GridPane hgap="12" vgap="8">
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                        <ColumnConstraints prefWidth="180" hgrow="ALWAYS"/>
+                    </columnConstraints>
+                    
+                    <!-- Row 1: Grade Level, Strand, Previous School -->
+                    <Label text="Grade Level *" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="gradeLevelComboBox" GridPane.columnIndex="0" GridPane.rowIndex="1" prefHeight="30"/>
+                    
+                    <Label text="Strand" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="strandComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="30" onAction="#handleStrandChange"/>
+                    
+                    <Label text="Section" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="sectionComboBox" GridPane.columnIndex="2" GridPane.rowIndex="1" prefHeight="30" promptText="Select Section"/>
+                    
+                    <Label text="Previous School" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <TextField fx:id="previousSchoolField" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" prefHeight="30"/>
+                    
+                    <!-- Row 2: GWA, LRN, Enrollment Status -->
+                    <Label text="GWA" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <TextField fx:id="gwaField" GridPane.columnIndex="0" GridPane.rowIndex="3" prefHeight="30" promptText="0.00"/>
+                    
+                    <Label text="LRN (Optional)" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <TextField fx:id="lrnField" GridPane.columnIndex="1" GridPane.rowIndex="3" prefHeight="30"/>
+                    
+                    <Label text="Enrollment Status *" GridPane.columnIndex="2" GridPane.rowIndex="2" style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+                    <ComboBox fx:id="enrollmentStatusComboBox" GridPane.columnIndex="2" GridPane.rowIndex="3" prefHeight="30"/>
+                </GridPane>
+                
+                <!-- Error Label -->
+                <Label fx:id="errorLabel" text="" style="-fx-text-fill: #e74c3c; -fx-font-size: 11px; -fx-padding: 8; -fx-background-color: #ffe6e6; -fx-background-radius: 5;" visible="false" wrapText="true" maxWidth="900"/>
+                
+                <!-- Buttons -->
+                <HBox spacing="12" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+                    <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel" 
+                            style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 13px; -fx-background-radius: 5; -fx-padding: 8 25; -fx-cursor: hand;"/>
+                    <Button fx:id="updateButton" text="Update Student" onAction="#handleUpdate" 
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 8 25; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+    
+</BorderPane>
+

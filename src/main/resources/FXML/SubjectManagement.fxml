@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.enrollment.system.controller.SubjectManagementController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 20;">
+            <Label text="Subject Management" 
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" 
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 13px; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <!-- Filters Section -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <Label text="Filters" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <Label text="Grade Level:" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    <ComboBox fx:id="gradeFilter" promptText="All Grades" 
+                              style="-fx-font-size: 12px; -fx-pref-width: 120;"
+                              onAction="#handleFilterChange"/>
+                    
+                    <Label text="Subject Type:" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d; -fx-padding: 0 0 0 10;"/>
+                    <ComboBox fx:id="subjectTypeFilter" promptText="All Types" 
+                              style="-fx-font-size: 12px; -fx-pref-width: 150;"
+                              onAction="#handleFilterChange"/>
+                    
+                    <Label text="Strand:" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d; -fx-padding: 0 0 0 10;"/>
+                    <ComboBox fx:id="strandFilter" promptText="All Strands" 
+                              style="-fx-font-size: 12px; -fx-pref-width: 120;"
+                              onAction="#handleFilterChange"/>
+                    
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="clearFiltersButton" text="Clear Filters" onAction="#handleClearFilters" 
+                            style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 5; -fx-padding: 6 15; -fx-cursor: hand;"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Search:" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    <TextField fx:id="searchField" promptText="Search subjects by name..." 
+                               style="-fx-font-size: 12px; -fx-pref-width: 300;"
+                               onKeyReleased="#handleSearch"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Subjects Table -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" VBox.vgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Subjects" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="subjectCountLabel" text="Total Subjects: 0" 
+                           style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </HBox>
+                
+                <TableView fx:id="subjectsTable" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <Label text="No subjects found." 
+                               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-padding: 20;" 
+                               alignment="CENTER"/>
+                    </placeholder>
+                    <columns>
+                        <TableColumn fx:id="subjectIdColumn" text="ID" prefWidth="50" minWidth="50" maxWidth="50" visible="false"/>
+                        <TableColumn fx:id="subjectNameColumn" text="Subject Name" prefWidth="350"/>
+                        <TableColumn fx:id="subjectGradeColumn" text="Grade" prefWidth="70"/>
+                        <TableColumn fx:id="subjectTypeColumn" text="Type" prefWidth="120"/>
+                        <TableColumn fx:id="subjectStrandColumn" text="Strand" prefWidth="100"/>
+                        <TableColumn fx:id="subjectStatusColumn" text="Status" prefWidth="80"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+    
+</BorderPane>
+
